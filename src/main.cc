@@ -4,6 +4,88 @@ void print(int&);//blueprint o prototipo
 
 int main()
 {
+    /*
+    int matrix2[3][3]
+    {
+        {1, 2, 3}, 
+        {4, 5, 6}, 
+        {7, 8, 9}
+    };
+
+      int matrix3[3][3][3]
+    {
+        {
+            {1, 2, 3}, 
+            {4, 5, 6}, 
+            {7, 8, 9}
+        }, 
+        {
+            {10, 11, 12}, 
+            {13, 14, 15}, 
+            {16, 17, 18}
+        }, 
+        {
+            {19, 20, 21}, 
+            {22, 23, 24}, 
+            {25, 26, 27}
+        }
+    };
+
+    //matriz de 2 dimensiones
+    for(int i{}; i < 3; i++)
+    {
+        for(int j{}; j < 3; j++)
+        {
+            std::cout << matrix2[i][j] << "\t";
+        }
+        std::cout << std::endl;
+    }
+
+    //matriz de 3 dimensiones
+     for(int i{}; i < 3; i++)
+    {
+        for(int j{}; j < 3; j++)
+        {
+            for(int k{}; k < 3; k++)
+            {
+                std::cout << matrix3[i][j][k] << "\t";
+            }
+            std::cout << std::endl;
+        }
+        std::cout << std::endl;
+    }*/
+
+    //APUNTADOR
+   /* int* ptrArr{new int[6]{5,3,8,2,9,1}};
+    std::cout << "ptrArr memmory: " << &ptrArr << std::endl;
+    std::cout << "ptrArr memmory of the array: " << ptrArr << std::endl;
+    std::cout << "ptrArr memmory: " << *ptrArr << std::endl;
+    std::cout << "Array memmory: " << &ptrArr[0] << std::endl;
+    std::cout << "Array memmory: " << ptrArr[0] << std::endl;
+
+    int** doublePtr{new int*{new int[5]}}
+    */
+
+    //DOUBLE POINTERS
+    int** matrix2Ptr
+    {
+        new int*[3]
+        {
+            new int[3]{1, 2, 3},
+            new int[3]{4, 5, 6},//1
+            new int[3]{7, 8, 9}//2
+        }
+    };
+
+    for(int i{}; i < 3; i++)
+    {
+        for(int j{}; j < 3; j++)
+        {
+            std::cout << *(*(matrix2Ptr + i)) + j << "\t";
+        }
+        std::cout << std::endl;
+    }
+
     //int numbers[6]{100, 87982, 3456, 465, 885, 86};
 
     //std::cout << "Array memmory: " << numbers << std::endl;
@@ -37,7 +119,7 @@ int main()
     {
         std::cout << numbers[i] << "\t";
         i++;
-    }*/
+    }
 
     int n1{5};//stack
 
@@ -79,10 +161,12 @@ int main()
     std::cout << std::endl;
 
     print(n1);
-
+*/
     std::cin.get();
     
     return 0;
+    
+   
 }
 
 void print(int& number)
